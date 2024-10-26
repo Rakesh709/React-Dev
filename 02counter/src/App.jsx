@@ -12,12 +12,20 @@ function App() {
   const addValue = ()=> {
     //console.log("clicked",Math.random());
     //console.log("clicked",counter);
-    if(counter==20){
-      setCounter(counter=20)
-    }else{
-      setCounter(counter+1) 
-    }
-    
+    // if(counter==20){
+    //   setCounter(counter=20)
+    // }else{
+    //   setCounter(counter+1) 
+    // }
+
+
+    // setCounter(counter+1)
+    setCounter((prevCounter)=> prevCounter+1)
+    setCounter((prevCounter)=>prevCounter+1)
+    setCounter((prevCounter)=>prevCounter+1)
+    setCounter((prevCounter)=>prevCounter+1)    
+
+    // So setCounter have a call back hidden feature which will give call back and willt ake it and update the ui
   }
 
 
