@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { InputBox } from "./components";
-import useCurrencyInfo from "./hooks/useCurrencyinfo";
+import useCurrencyInfo from "./hooks/useCurrencyinfo.js";
 
 import "./App.css";
 
@@ -77,7 +77,7 @@ function App() {
               type="submit"
               className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg"
             >
-              Convert {from.toUpperCase()} to {to.toUpperCase()}
+              Convert USD to INR
             </button>
           </form>
         </div>
