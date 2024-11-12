@@ -36,6 +36,7 @@ export const todoSlice = createSlice({
 
 export const {addTodo,removeTodo} = todoSlice.actions
 
+export default todoSlice.reducer 
 
 
 //contextAPI : function kai declartion kr rhe thai but uski defination nhi likh rhe thai
@@ -47,3 +48,5 @@ export const {addTodo,removeTodo} = todoSlice.actions
 //state is hande to hande situation from initialState
 
 //action : to get some value like id in removeTodo
+
+//jo jo reducer dego unko hi value update krunga
