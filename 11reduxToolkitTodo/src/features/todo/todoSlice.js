@@ -21,6 +21,7 @@ export const todoSlice = createSlice({
             const todo={
                 id: nanoid(), 
                 text: action.payload
+                //reduc-toolkit extention u will get
             }
             state.todos.push(todo)
             
