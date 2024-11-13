@@ -13,6 +13,7 @@ const initialState = {
 //step3 
 
 export const todoSlice = createSlice({
+    //step3.1
     name:"todo",
     initialState,
     reducers:{
@@ -29,6 +30,8 @@ export const todoSlice = createSlice({
         removeTodo:(state,action)=>{
             state.todos = state.todos.filter((todo)=> todo.id !== action.payload)
         },
+
+        //update functinality
     }
 })
 
@@ -51,3 +54,5 @@ export default todoSlice.reducer
 //action : to get some value like id in removeTodo
 
 //jo jo reducer dego unko hi value update krunga
+
+//feature ko slice bolte hai

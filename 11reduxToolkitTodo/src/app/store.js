@@ -8,3 +8,5 @@ export const store = configureStore({
     reducer: todoReducer
 })
 //most of the time chije object he lengi
+//every application will have only 1 store 
+// that is single source of truth
