@@ -52,9 +52,36 @@ function Login() {
               Sign Up  
             </Link>
         </p>
+        {/* //for error display */}
+        {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
+        <form onSubmit={handleSubmit(login)} className="mt-8">
+            <div className="space-y-5">
+              <Input
+                lable="Email:"
+                placeholder="Enter your email"
+                type="email"
+                {...register("email",{
+                  required:true,
+                  validate:{
+                    matchPatern:(value) => /^([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}$/igm.test(value) || "Email address must be a valid address",
+                  }
+                })}
+                // above is compuslary
+              />
+              <Input
+                lable="Password"
+              />
+            </div>
+        </form>
       </div>
     </div>
   );
 }
 
 export default Login;
+
+
+// handleSubmit eek event hai 
+//handleSubmit ko chod kr kuch bhi naam rakho woo abb eek keyword act krega
+//wo useForm sai mil rha hai 
+//handlessubmit eek event 
