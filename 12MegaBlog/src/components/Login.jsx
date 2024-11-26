@@ -41,37 +41,48 @@ function Login() {
             <Logo width="100%" />
           </span>
         </div>
-        <h2 className="text-center text-2xl font-bold leading-tight">Sign in to your account</h2>
+        <h2 className="text-center text-2xl font-bold leading-tight">
+          Sign in to your account
+        </h2>
         <p className="mt-2 text-center text-base text-black/60">
-            Don&apos;t have any account?&nbsp;
-            <Link
-                to='/signup'
-                className="font-medium text-primary transition-all duration-200 hover:underline"
-            
-            >
-              Sign Up  
-            </Link>
+          Don&apos;t have any account?&nbsp;
+          <Link
+            to="/signup"
+            className="font-medium text-primary transition-all duration-200 hover:underline"
+          >
+            Sign Up
+          </Link>
         </p>
         {/* //for error display */}
         {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
         <form onSubmit={handleSubmit(login)} className="mt-8">
-            <div className="space-y-5">
-              <Input
-                lable="Email:"
-                placeholder="Enter your email"
-                type="email"
-                {...register("email",{
-                  required:true,
-                  validate:{
-                    matchPatern:(value) => /^([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}$/igm.test(value) || "Email address must be a valid address",
-                  }
-                })}
-                // above is compuslary
-              />
-              <Input
-                lable="Password"
-              />
-            </div>
+          <div className="space-y-5">
+            <Input
+              lable="Email:"
+              placeholder="Enter your email"
+              type="email"
+              {...register("email", {
+                required: true,
+                validate: {
+                  matchPatern: (value) =>
+                    /^([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}$/gim.test(value) ||
+                    "Email address must be a valid address",
+                },
+              })}
+              // above is compuslary
+            />
+            <Input
+              lable="Password:"
+              placeholder="Enter your password"
+              type="password"
+              {...register("password", {
+                required: true,
+              })}
+            />
+            <Button type="submit" className="w-full">
+              Sign Up
+            </Button>
+          </div>
         </form>
       </div>
     </div>
@@ -80,8 +91,8 @@ function Login() {
 
 export default Login;
 
-
-// handleSubmit eek event hai 
-//handleSubmit ko chod kr kuch bhi naam rakho woo abb eek keyword act krega
-//wo useForm sai mil rha hai 
-//handlessubmit eek event 
+// handleSubmit eek event hai.
+//handleSubmit ko chod kr kuch bhi naam rakho woo abb eek keyword act krega.
+//wo useForm sai mil rha hai.
+//handlessubmit eek event hai.
+//register bhi eek event hai.
