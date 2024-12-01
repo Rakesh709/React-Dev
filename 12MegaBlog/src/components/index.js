@@ -9,5 +9,14 @@ import LogoutBtn from './Header/LogoutBtn'
 
 import RTE from './RTE'
 
+import Signup from "./Signup"
 
-export {Header,Footer,Container,Logo,LogoutBtn,RTE}
+import Login from "./Login"
+
+import Post from './Post'
+
+import PostForm from './post-form/PostForm'
+
+import PostCard from './PostCard'
+
+export {Header,Footer,Container,Logo,LogoutBtn,RTE,Signup,Post,PostForm , PostCard}
