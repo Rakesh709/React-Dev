@@ -16,7 +16,6 @@ import Login from "./Login";
 
 import Button from "./Button";
 
-import Post from "../pages/Post.jsx";
 
 import PostForm from "./post-form/PostForm";
 
@@ -37,7 +36,6 @@ export {
   Signup,
   Input,
   Login,
-  Post,
   PostForm,
   PostCard,
   AuthLayout,
