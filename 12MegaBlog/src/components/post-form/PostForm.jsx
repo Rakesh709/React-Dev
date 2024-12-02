@@ -17,7 +17,7 @@ function PostForm({ post }) {
     });
 
   const navigate = useNavigate();
-  const userDate = useSelector((state) => state.user.userData);
+  const userDate = useSelector((state) => state.auth.userData);
   //ager post ki vaue hai to edit kro
   //ager post ki value nhi hai to new entry create karo
   const submit = async (data) => {
