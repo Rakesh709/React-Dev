@@ -64,8 +64,8 @@ function PostForm({ post }) {
       return value
         .trim()
         .toLowerCase()
-        .replace(/^[a-zA-Z\D\S]+/g, "-")
-        .replace(/\s/g, "-");
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "");
 
     return "";
   }, []);
