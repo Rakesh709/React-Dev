@@ -60,6 +60,7 @@ export default function Post() {
                 </div>
                 <div className="browser-css">
                     {parse(post.content)}
+                    {/* post is HTML so we are parsing it  */}
                     </div>
             </Container>
         </div>
