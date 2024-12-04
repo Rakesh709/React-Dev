@@ -16,3 +16,8 @@ give variable with REACT_APP_env
 # for vite ENV 
 
 -https://v3.vitejs.dev/guide/env-and-mode.html
+
+#CORS in nutshell
+frontend is running on someport and backend is running on some port 
+how Front end will know that incoming call from backend is trusted or not 
+because Frontend and backend port is diffrent 
