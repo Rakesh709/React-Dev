@@ -19,8 +19,8 @@ function AllPost() {
                 {posts.map((post)=>(
                     <div key={post.$id} className='p-2 w-1/4'>
                         <PostCard {...post}/>
-                        //here we were not destruture it 
-                        //bug fixed
+                        {/* //here we were not destruture it 
+                        //bug fixed */}
                     </div>
                 ))}            
             </div>
