@@ -21,3 +21,17 @@ give variable with REACT_APP_env
 frontend is running on someport and backend is running on some port 
 how Front end will know that incoming call from backend is trusted or not 
 because Frontend and backend port is diffrent 
+
+# Learn in this Project 
+- Signup
+-login
+-logout
+-redu/context
+-routing
+-CRUD-text
+-file handling 
+
+#main Topic 
+-Auth
+-Database
+-file management
