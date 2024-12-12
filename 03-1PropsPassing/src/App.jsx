@@ -11,8 +11,7 @@ function App({name}) {
     <>
       <div>
         <Card name="Rakesh Kumar"/>
-        <Card name="Rock" age="45"/>
-        <Card />
+        
       </div>
     </>
   );
