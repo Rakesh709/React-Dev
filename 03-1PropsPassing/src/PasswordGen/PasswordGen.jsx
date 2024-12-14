@@ -1,12 +1,16 @@
 //length -> nuumber -> charcter
 
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
+import { useRef } from "react";
 
 function PasswordGen() {
   const [length, setLength] = useState(8);
   const [number, setNumber] = useState(false);
   const [charcter, setCharacter] = useState(false);
   const [password, setPassword] = useState("");
+
+
+  const passwordRef = useRef(null)
 
   const passwordGenerater = useCallback(() => {
     let pass = "";
@@ -25,11 +29,31 @@ function PasswordGen() {
     setPassword(pass);
   }, [length, number, charcter, setPassword]);
 
+
+  const passwordGenCopy = useCallback(()=>{
+    passwordRef.current?.select()
+    window.navigator.clipboard.writeText(password)
+  },[password])
+
+  useEffect(()=>{
+    passwordGenerater()
+  },[length,number,charcter,passwordGenerater])
+
+
   return (
     <>
+    <h1 className="text-2xl">Password Generater</h1>
       <div>
-        <input type="text" value={password} readOnly placeholder="password" />
-        <button>Copy</button>
+        <input
+         type="text" 
+         value={password} 
+         readOnly 
+         placeholder="password"
+         ref={passwordRef}
+          />
+        <button
+          onClick={passwordGenCopy}
+        >Copy</button>
       </div>
       <div>
         <div>
@@ -43,16 +67,8 @@ function PasswordGen() {
           <label>length:{length}</label>
         </div>
         <div>
-          <input type="checkbox"
-           defaultChecked={number}
-          
-          
-           />
-          <label>Number</label>
-        </div>
-        <div>
             <input type="checkbox"
-            value={setCharacter}
+            value={setNumber}
             id="numberInput"
             onChange={()=>setNumber((prev)=>!prev)}
              />
@@ -61,9 +77,9 @@ function PasswordGen() {
         <div>
           <input 
              type="checkbox" 
-             defaultChecked={charcter}
+             defaultChecked={setCharacter}
              id="characterInput"
-             onChange={()=>setCharacter((prev)=> !prev)}
+             onChange={()=>setCharacter((Charprev)=> !Charprev)}
            />
            <label >Character</label>
         </div>
