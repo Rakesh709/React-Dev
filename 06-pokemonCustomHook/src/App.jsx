@@ -11,8 +11,7 @@ function App() {
   return (
     <>
       <div >
-        <Input id={id} onIdChange={setId} />
-        {data ? <Card name={data.name} /> : <p>No Pokémon data available</p>}
+        <Input id={id} onIdChange={setId} data={data} />
       </div>
     </>
   );
