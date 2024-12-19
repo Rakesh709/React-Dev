@@ -1,23 +1,22 @@
 import { useEffect, useState } from "react";
 
-function usePokimonInfo(id) {
+function usePokimonInfo() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    if (!id) return;
-
-    fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`)
+    
+    fetch(`https://pokeapi.co/api/v2/pokemon?limit=10`)
       .then((res) => res.json())
-      .then((res) => setData(res.evolves_from_species.name))
-      // .then((res)=> setData(res[evolves_from_species.name]))
+      .then((res)=>setData(res.results))
+      
       .catch((err) => {
         console.error("Error fetching Pokémon data:", err);
         setData(null);
       });
-    //   console.log(data);
-  }, [id]);
+  
+  }, []);
   console.log(data);
-  return data;
+  return [data];
 }
 
 export default usePokimonInfo;

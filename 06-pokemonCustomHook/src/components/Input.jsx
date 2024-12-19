@@ -17,8 +17,9 @@ function Input({ id, onIdChange,data }) {
       <div class="max-w-sm mx-auto bg-green-300 rounded-lg shadow-lg p-6 my-8 ">
         <div className="mt-4 text-center">
         <h2 className="text-xl font-bold text-gray-800">
-            {data || "No data available"}
+            {data.name || "No data available"}
           </h2>
+          <img src={data.url} alt="" />
         </div>
       </div>
     </div>
