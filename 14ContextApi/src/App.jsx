@@ -8,12 +8,25 @@ import Profile from './componennts/Profile'
 import { ThemeProvider } from './context/ThemeContex'
 import ThemeButton from './componennts/ThemeButton'
 import Card from './componennts/Card'
-
+import LanguageContext from './context/LanguageContext '
+import Content from './componennts/Content'
+import Header from './componennts/Header'
+import Footer from './componennts/Footer'
 
 
 
 function App() {
   const [themeMode,setThemeMode] =useState("light")
+
+  const [language,setLanguage] = useState("en")
+
+  const switchLanguage = (lang)=> setLanguage(lang)
+
+  const translations = {
+    en: { greeting: "Hello", content: "This is the content.", footer: "Footer content" },
+    es: { greeting: "Hola", content: "Este es el contenido.", footer: "Contenido del pie de página" },
+    fr: { greeting: "Bonjour", content: "Ceci est le contenu.", footer: "Contenu du pied de page" },
+  };
 
   const lightTheme = ()=>{
     setThemeMode("light")
@@ -31,6 +44,7 @@ useEffect(()=>{
 
 
   return (
+    <LanguageContext.Provider value={{language,translations,switchLanguage}}>
     <UserContextProvider>
       <h1>
         React with chai and share is imp
@@ -53,6 +67,12 @@ useEffect(()=>{
           </div>
       </ThemeProvider>
     </UserContextProvider>
+    <div>
+      <Header/>
+      <Content/>
+      <Footer/>
+    </div>
+    </LanguageContext.Provider>
   )
 }
 
