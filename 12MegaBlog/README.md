@@ -35,3 +35,14 @@ because Frontend and backend port is diffrent
 -Auth
 -Database
 -file management
+
+//backend 
+https://appwrite.io/docs
+
+editor 
+https://www.tiny.cloud/docs/tinymce/latest/react-cloud/
+
+htmp-parser
+
+for form
+https://react-hook-form.com/
