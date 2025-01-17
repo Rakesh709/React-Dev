@@ -59,7 +59,12 @@ function App() {
       </div>
       <div className="text-gray-500 cursor-pointer" onClick={refreshPage}>
         Please <span className="text-blue-400">Refresh</span> for new UUID{" "}
+      </div >
+      {/*here is the previous uuid */}
+      <div  className="text-yellow-300 my-7">
+      <h1>{uuid}</h1>
       </div>
+      
       <div className="my-10">
         <p className="text-white">
           UUID Version 4 is one of the most commonly used types of UUIDs. It is
